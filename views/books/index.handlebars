@@ -1,0 +1,66 @@
+<h2>Danh sách sách</h2>
+
+<p>
+    VAT áp dụng:
+    <strong>{{vat}}%</strong>
+</p>
+
+
+{{#if books.length}}
+
+<table>
+
+    <thead>
+
+        <tr>
+            <th>Mã sản phẩm</th>
+            <th>Tên sách</th>
+            <th>Tác giả</th>
+            <th>Giá gốc</th>
+            <th>Giá sau VAT</th>
+        </tr>
+
+    </thead>
+
+
+    <tbody>
+
+        {{#each books}}
+
+        <tr>
+
+            <td>
+                {{this.productCode}}
+            </td>
+
+            <td>
+                {{this.title}}
+            </td>
+
+            <td>
+                {{this.author}}
+            </td>
+
+            <td>
+                {{this.price}}
+            </td>
+
+            <td>
+                {{this.priceAfterTax}}
+            </td>
+
+        </tr>
+
+        {{/each}}
+
+    </tbody>
+
+</table>
+
+{{else}}
+
+<p>
+    Chưa có sách nào trong cơ sở dữ liệu.
+</p>
+
+{{/if}}
