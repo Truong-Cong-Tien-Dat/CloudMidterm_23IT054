@@ -1,0 +1,78 @@
+<h2>Thêm sách mới</h2>
+
+<p>
+    Mã sản phẩm bắt buộc bắt đầu bằng:
+    <strong>054</strong>
+</p>
+
+<p>
+    VAT hiện tại:
+    <strong>{{vat}}%</strong>
+</p>
+
+
+{{#if error}}
+
+    <p class="error">
+        {{error}}
+    </p>
+
+{{/if}}
+
+
+<form
+    action="/books/add"
+    method="POST"
+>
+
+    <label>
+        Mã sản phẩm:
+    </label>
+
+    <input
+        type="text"
+        name="productCode"
+        placeholder="Ví dụ: 054001"
+        required
+    >
+
+
+    <label>
+        Tên sách:
+    </label>
+
+    <input
+        type="text"
+        name="title"
+        required
+    >
+
+
+    <label>
+        Tác giả:
+    </label>
+
+    <input
+        type="text"
+        name="author"
+        required
+    >
+
+
+    <label>
+        Giá:
+    </label>
+
+    <input
+        type="number"
+        name="price"
+        min="0"
+        required
+    >
+
+
+    <button type="submit">
+        Thêm sách
+    </button>
+
+</form>
